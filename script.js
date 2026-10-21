@@ -5,7 +5,8 @@ const fotoMinecraft = [
   "img/minecraft-1.jpg",
   "img/minecraft-2.jpg",
   "img/minecraft-3.jpg",
-  "img/minecraft-4.jpg"
+  "img/minecraft-4.jpg",
+  "img/minecraft-5.jpg",
 ];
 
 const pilihan = fotoMinecraft[Math.floor(Math.random() * fotoMinecraft.length)];
