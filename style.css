@@ -1,0 +1,669 @@
+/* ==========================================================
+   X SIJA 1 — Website Project
+   Tema: gelap kebiruan + hijau teal, kartu seperti template skin
+   ========================================================== */
+
+:root {
+  --bg: #0a1620;
+  --bg-deep: #07111a;
+  --teal-dark: #0d2f35;
+  --teal: #1b5a52;
+  --cyan-card: #9fe7ee;
+  --cyan-card-2: #6fd0dc;
+  --blue-accent: #2f9bff;
+  --lime: #b6f23c;
+  --lime-dark: #8fd11f;
+  --text: #e8f1f5;
+  --text-soft: #a9bcc6;
+  --skin: #c98f63;
+  --skin-dark: #a8734d;
+  --hair: #3b2a1e;
+
+  --font-display: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Kursor kustom (hanya perangkat dengan mouse) ---------- */
+
+.kursor-aktif,
+.kursor-aktif * {
+  cursor: none !important;
+}
+
+.kursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(10, 22, 32, 0.25), 0 0 10px 2px rgba(190, 240, 245, 0.5);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  will-change: transform;
+}
+
+.kursor.tampil {
+  opacity: 1;
+}
+
+/* ---------- Animasi masuk ---------- */
+
+@keyframes masuk {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.anim {
+  opacity: 0;
+  animation: masuk 0.9s cubic-bezier(0.22, 0.8, 0.3, 1) forwards;
+  animation-delay: calc(var(--d, 0) * 1s);
+}
+
+/* ---------- Hero / header ---------- */
+
+.hero {
+  position: relative;
+  min-height: 430px;
+  padding-bottom: 90px;
+  isolation: isolate;
+}
+
+/* foto minecraft acak + fade out ke bawah */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, #153d3a 0%, #0f3340 55%, #0a1f30 100%);
+  opacity: 0;
+  animation: fade 1.6s ease forwards;
+}
+
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--hero-img, none);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+  -webkit-mask-image: linear-gradient(to bottom, #000 35%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 35%, transparent 100%);
+}
+
+.hero-bg.ada-foto::before {
+  opacity: 0.55;
+}
+
+/* lapisan gelap agar teks tetap terbaca + menyatu dengan isi */
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(8, 30, 30, 0.55) 0%, rgba(10, 22, 32, 0.35) 45%, var(--bg) 100%);
+}
+
+.nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+.brand-mark {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.brand-mark i {
+  background: var(--text);
+  display: block;
+}
+.brand-mark i:nth-child(2),
+.brand-mark i:nth-child(4),
+.brand-mark i:nth-child(8) {
+  background: transparent;
+}
+
+.hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 70px 24px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  color: #fff;
+  text-shadow:
+    0 0 6px rgba(159, 231, 238, 0.55),
+    0 0 18px rgba(111, 208, 220, 0.35),
+    0 2px 24px rgba(0, 0, 0, 0.45);
+}
+
+.hero .subjudul {
+  opacity: 0;
+  animation: fade 0.01s linear 0.55s forwards;
+  margin-top: 14px;
+  font-weight: 600;
+  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+  letter-spacing: 0.01em;
+  color: var(--blue-accent);
+}
+
+.hero .sambutan {
+  margin: 12px auto 0;
+  max-width: 460px;
+  font-size: 0.82rem;
+  color: var(--text-soft);
+}
+
+/* ---------- Daftar siswa ---------- */
+
+.daftar {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 24px 130px;
+}
+
+.cari-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.cari {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: min(100%, 420px);
+  padding: 0 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(159, 231, 238, 0.25);
+  border-radius: 999px;
+  color: var(--text-soft);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.cari:focus-within {
+  border-color: var(--cyan-card);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.cari svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+.cari input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 0;
+  background: none;
+  border: 0;
+  outline: 0;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9rem;
+}
+
+.cari input::placeholder {
+  color: var(--text-soft);
+}
+
+.penanda {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.penanda span {
+  color: var(--text-soft);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+}
+
+.grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 26px 28px;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--teal-dark);
+  border-radius: 18px;
+  overflow: hidden;
+  /* "backwards": animasi tidak mengunci transform setelah selesai, jadi efek hover tetap jalan */
+  animation: masuk 0.55s cubic-bezier(0.22, 0.8, 0.3, 1) backwards;
+  animation-delay: calc(0.7s + var(--i, 0) * 0.03s);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: scale(1.05);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.card[hidden] {
+  display: none;
+}
+
+.card-top {
+  position: relative;
+  height: 96px;
+  display: grid;
+  place-items: center;
+  background: var(--cyan-card);
+}
+
+/* nomor absen */
+.absen {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0d2f35;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+
+/* kepala blok sederhana (murni CSS) */
+.kepala {
+  width: 44px;
+  height: 44px;
+  background:
+    linear-gradient(var(--hair) 0 30%, transparent 30%),
+    var(--skin);
+  position: relative;
+  border-radius: 8px;
+}
+
+.kepala::before,
+.kepala::after {
+  content: "";
+  position: absolute;
+  top: 52%;
+  width: 7px;
+  height: 7px;
+  background: #1c2b3a;
+}
+.kepala::before { left: 9px; }
+.kepala::after { right: 9px; }
+
+.info {
+  padding: 14px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: linear-gradient(180deg, #0f3a40 0%, #0b2a34 100%);
+  flex: 1;
+}
+
+.nama {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  padding: 7px 12px;
+  background: var(--lime);
+  color: #10320f;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--cyan-card);
+  color: #0d2f35;
+  box-shadow: 0 0 14px rgba(159, 231, 238, 0.55);
+  transform: scale(1.03);
+}
+
+.btn.nonaktif,
+.btn.nonaktif:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text-soft);
+  box-shadow: none;
+  transform: none;
+  cursor: default;
+}
+
+.btn:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+.btn svg {
+  width: 11px;
+  height: 11px;
+}
+
+/* ---------- Efek ketik subjudul ---------- */
+
+.subjudul .belum {
+  visibility: hidden;
+}
+
+.subjudul .sudah::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 2px;
+  vertical-align: -0.15em;
+  background: currentColor;
+  animation: kedip 0.7s steps(1) infinite;
+}
+
+.subjudul.selesai .sudah::after {
+  display: none;
+}
+
+@keyframes kedip {
+  50% { opacity: 0; }
+}
+
+/* ---------- Tombol favorit ---------- */
+
+.baris-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px 16px;
+}
+
+.filter-fav {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: transparent;
+  color: var(--text-soft);
+  border: 1px solid rgba(159, 231, 238, 0.25);
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.filter-fav svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.filter-fav:hover {
+  border-color: var(--cyan-card);
+  color: var(--text);
+}
+
+.filter-fav[aria-pressed="true"] {
+  background: rgba(255, 77, 109, 0.16);
+  border-color: #ff4d6d;
+  color: #ff8fa3;
+}
+
+.filter-fav[aria-pressed="true"] svg {
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.favorit {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.7);
+  color: #0d2f35;
+  border: 0;
+  border-radius: 50%;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.favorit svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.favorit:hover {
+  background: #fff;
+}
+
+.favorit[aria-pressed="true"] {
+  background: #fff;
+  color: #ff4d6d;
+  animation: denyut 0.3s ease;
+}
+
+.favorit[aria-pressed="true"] svg {
+  fill: currentColor;
+}
+
+.favorit:focus-visible,
+.filter-fav:focus-visible,
+.ke-atas:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+@keyframes denyut {
+  50% { transform: scale(1.25); }
+}
+
+/* ---------- Tombol kembali ke atas ---------- */
+
+.ke-atas {
+  position: fixed;
+  left: calc(100% - 64px);
+  bottom: max(18px, env(safe-area-inset-bottom));
+  z-index: 50;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+  background: var(--cyan-card);
+  color: #0d2f35;
+  border: 0;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition:
+    left 0.4s cubic-bezier(0.22, 0.8, 0.3, 1),
+    bottom 0.4s cubic-bezier(0.22, 0.8, 0.3, 1),
+    width 0.4s cubic-bezier(0.22, 0.8, 0.3, 1),
+    height 0.4s cubic-bezier(0.22, 0.8, 0.3, 1),
+    gap 0.4s ease,
+    opacity 0.25s ease,
+    transform 0.4s cubic-bezier(0.22, 0.8, 0.3, 1),
+    visibility 0.25s;
+}
+
+.ke-atas.tampil {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.ke-atas .label {
+  max-width: 0;
+  opacity: 0;
+  white-space: nowrap;
+  transition: max-width 0.4s ease, opacity 0.3s ease;
+}
+
+/* di dasar halaman: pindah ke tengah, melebar menjadi oval, dan muncul tulisan */
+.ke-atas.tampil.dasar {
+  left: 50%;
+  bottom: 72px;
+  width: 200px;
+  height: 52px;
+  gap: 10px;
+  transform: translateX(-50%);
+}
+
+.ke-atas.dasar .label {
+  max-width: 130px;
+  opacity: 1;
+}
+
+.ke-atas:hover {
+  background: #fff;
+}
+
+.ke-atas svg {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+
+.kosong {
+  margin-top: 8px;
+  text-align: center;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 24px;
+  font-size: 0.75rem;
+  color: var(--text-soft);
+  background: var(--bg-deep);
+}
+
+/* ---------- Responsif ---------- */
+
+@media (max-width: 960px) {
+  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 700px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .hero-inner { padding-top: 48px; }
+}
+
+@media (max-width: 420px) {
+  .daftar { padding-inline: 14px; }
+  .grid { gap: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ke-atas,
+  .ke-atas .label { transition: none; }
+  .anim,
+  .hero .subjudul,
+  .card,
+  .hero-bg {
+    animation: none;
+    opacity: 1;
+  }
+  .card:hover,
+  .card:focus-within { transform: none; }
+}

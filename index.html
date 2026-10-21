@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>X SIJA 1 — Website Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="kursor" id="kursor" aria-hidden="true"></div>
+
+  <header class="hero">
+    <div class="hero-bg" id="heroBg"></div>
+
+    <nav class="nav">
+      <span class="brand anim" style="--d:0.1">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        X SIJA 1
+      </span>
+    </nav>
+
+    <div class="hero-inner">
+      <h1 class="anim" style="--d:0.3">X SIJA 1 — Website Project</h1>
+      <p class="subjudul" id="subjudul">Kumpulan Website Personal Siswa Kelas X SIJA 1.</p>
+      <p class="sambutan anim" style="--d:0.8">
+        Selamat datang! Di sini kamu bisa menjelajahi website personal dari setiap siswa
+        yang dibuat dengan GitHub Pages. Pilih nama, lalu kunjungi hasil karyanya.
+      </p>
+    </div>
+  </header>
+
+  <main class="daftar">
+    <div class="cari-wrap anim" style="--d:1">
+      <label class="cari" for="cari">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="cari" type="search" placeholder="Cari nama atau nomor absen" autocomplete="off" spellcheck="false">
+      </label>
+      <div class="baris-info">
+        <p class="penanda" id="jumlah" aria-live="polite">36 Siswa</p>
+        <button class="filter-fav" id="tombolFavorit" type="button" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          Favorit saja <span id="jumlahFav">0</span>
+        </button>
+      </div>
+    </div>
+
+    <ul class="grid">
+      <li class="card" style="--i:0">
+        <div class="card-top">
+          <span class="absen">No. 01</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Aisah Ayu Nurjanah"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Aisah Ayu Nurjanah</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:1">
+        <div class="card-top">
+          <span class="absen">No. 02</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Alvira Zahra July Andari"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Alvira Zahra July Andari</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:2">
+        <div class="card-top">
+          <span class="absen">No. 03</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Anas Berkah Ramadhan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Anas Berkah Ramadhan</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:3">
+        <div class="card-top">
+          <span class="absen">No. 04</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Angling Hana Prabu Kinayung"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Angling Hana Prabu Kinayung</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:4">
+        <div class="card-top">
+          <span class="absen">No. 05</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Arcvian Bayu Krisnatyo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Arcvian Bayu Krisnatyo</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:5">
+        <div class="card-top">
+          <span class="absen">No. 06</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Axfin Lutfaka"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Axfin Lutfaka</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:6">
+        <div class="card-top">
+          <span class="absen">No. 07</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Azka Mandala Putra"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Azka Mandala Putra</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:7">
+        <div class="card-top">
+          <span class="absen">No. 08</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Damar Narendra Ramadhan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Damar Narendra Ramadhan</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:8">
+        <div class="card-top">
+          <span class="absen">No. 09</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Dani Kenzie Putra Pratama"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Dani Kenzie Putra Pratama</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:9">
+        <div class="card-top">
+          <span class="absen">No. 10</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Diah Ayu Widiyaningrum"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Diah Ayu Widiyaningrum</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:10">
+        <div class="card-top">
+          <span class="absen">No. 11</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Dika Ambal Ketawang"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Dika Ambal Ketawang</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:11">
+        <div class="card-top">
+          <span class="absen">No. 12</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Dimas Bagus Firnadi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Dimas Bagus Firnadi</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:12">
+        <div class="card-top">
+          <span class="absen">No. 13</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Dimas Saputra"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Dimas Saputra</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:13">
+        <div class="card-top">
+          <span class="absen">No. 14</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Dipta Pawitra"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Dipta Pawitra</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:14">
+        <div class="card-top">
+          <span class="absen">No. 15</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Ega Ramadhan Wibawa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Ega Ramadhan Wibawa</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:15">
+        <div class="card-top">
+          <span class="absen">No. 16</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Fauzi Nur Huda"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Fauzi Nur Huda</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:16">
+        <div class="card-top">
+          <span class="absen">No. 17</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Ghina Hanif Oktafiani"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Ghina Hanif Oktafiani</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:17">
+        <div class="card-top">
+          <span class="absen">No. 18</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Hafadzah Askha Fail"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Hafadzah Askha Fail</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:18">
+        <div class="card-top">
+          <span class="absen">No. 19</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Haniffathin Qonitah"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Haniffathin Qonitah</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:19">
+        <div class="card-top">
+          <span class="absen">No. 20</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Jalu Lintang Ramadhan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Jalu Lintang Ramadhan</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:20">
+        <div class="card-top">
+          <span class="absen">No. 21</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Keio Nandana Avino"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Keio Nandana Avino</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:21">
+        <div class="card-top">
+          <span class="absen">No. 22</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Keisya Anindita Nursyafa'ah"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Keisya Anindita Nursyafa'ah</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:22">
+        <div class="card-top">
+          <span class="absen">No. 23</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Keshia Ivana Sakhi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Keshia Ivana Sakhi</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:23">
+        <div class="card-top">
+          <span class="absen">No. 24</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Laisa Aulia Salamah"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Laisa Aulia Salamah</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:24">
+        <div class="card-top">
+          <span class="absen">No. 25</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: M. Fauzan Nur Putra Agam"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">M. Fauzan Nur Putra Agam</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:25">
+        <div class="card-top">
+          <span class="absen">No. 26</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Muhammad Hanif Hisyam"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Muhammad Hanif Hisyam</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:26">
+        <div class="card-top">
+          <span class="absen">No. 27</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Muhammad Hanif Jibran"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Muhammad Hanif Jibran</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:27">
+        <div class="card-top">
+          <span class="absen">No. 28</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Muhammad Yuli Setyawan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Muhammad Yuli Setyawan</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:28">
+        <div class="card-top">
+          <span class="absen">No. 29</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Naufal Afkar Dzaky Ramadhan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Naufal Afkar Dzaky Ramadhan</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:29">
+        <div class="card-top">
+          <span class="absen">No. 30</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Nico Exdyansyah Putra Zacky"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Nico Exdyansyah Putra Zacky</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:30">
+        <div class="card-top">
+          <span class="absen">No. 31</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Nicolas Vala Prierta Kurniawan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Nicolas Vala Prierta Kurniawan</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:31">
+        <div class="card-top">
+          <span class="absen">No. 32</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Pradana Putra Adi Wicaksana"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Pradana Putra Adi Wicaksana</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:32">
+        <div class="card-top">
+          <span class="absen">No. 33</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Putri Kirana"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Putri Kirana</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:33">
+        <div class="card-top">
+          <span class="absen">No. 34</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Raden Wisanggeni Jalu Panatas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Raden Wisanggeni Jalu Panatas</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:34">
+        <div class="card-top">
+          <span class="absen">No. 35</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Rafa Indrasta Putra Siswandoro"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Rafa Indrasta Putra Siswandoro</h3>
+          <a class="btn" href="#" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+      <li class="card" style="--i:35">
+        <div class="card-top">
+          <span class="absen">No. 36</span>
+          <button class="favorit" type="button" aria-pressed="false" aria-label="Tandai favorit: Rama Mulia Rabbani"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+          <div class="kepala"></div>
+        </div>
+        <div class="info">
+          <h3 class="nama">Rama Mulia Rabbani</h3>
+          <a class="btn" href="https://annymxbinary.github.io/My-Personal-Website/" target="_blank" rel="noopener">Kunjungi Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </li>
+    </ul>
+
+    <p class="kosong" id="kosong" hidden>Tidak ada siswa yang cocok.</p>
+  </main>
+
+  <footer class="footer">X SIJA 1 — Website Project</footer>
+
+  <button class="ke-atas" id="keAtas" type="button" aria-label="Kembali ke atas">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    <span class="label">Kembali ke atas</span>
+  </button>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
