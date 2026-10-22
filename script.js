@@ -67,8 +67,15 @@ if (document.getElementById("cari")) {
     el,
     nama: el.querySelector(".nama").textContent.trim().toLowerCase(),
     nomor: parseInt(el.querySelector(".absen").textContent.replace(/\D/g, ""), 10),
-    hati: el.querySelector(".favorit")
+    hati: el.querySelector(".favorit"),
+    ada: !el.querySelector(".btn").classList.contains("nonaktif")
   }));
+
+  let statusAktif = "semua";
+  const tabStatus = document.querySelectorAll(".tab");
+  document.getElementById("nSemua").textContent = kartu.length;
+  document.getElementById("nTersedia").textContent = kartu.filter((k) => k.ada).length;
+  document.getElementById("nBelum").textContent = kartu.filter((k) => !k.ada).length;
 
   const KUNCI_FAVORIT = "sijaFavorit";
   let favorit = new Set();
@@ -97,21 +104,25 @@ if (document.getElementById("cari")) {
     const cariNomor = /^\d+$/.test(angka) ? parseInt(angka, 10) : null;
 
     let tampil = 0;
-    kartu.forEach(({ el, nama, nomor }) => {
+    kartu.forEach(({ el, nama, nomor, ada }) => {
       const cocokTeks =
         kata === "" || (cariNomor !== null ? nomor === cariNomor : nama.includes(kata));
-      const cocok = cocokTeks && (!hanyaFavorit || favorit.has(nomor));
+      const cocokStatus =
+        statusAktif === "semua" || (statusAktif === "tersedia" ? ada : !ada);
+      const cocok = cocokTeks && cocokStatus && (!hanyaFavorit || favorit.has(nomor));
       el.hidden = !cocok;
       if (cocok) tampil++;
     });
 
-    const adaFilter = kata !== "" || hanyaFavorit;
+    const adaFilter = kata !== "" || hanyaFavorit || statusAktif !== "semua";
     labelJumlah.textContent = adaFilter ? `${tampil} dari ${kartu.length} Siswa` : `${kartu.length} Siswa`;
     pesanKosong.hidden = tampil !== 0;
     if (tampil === 0) {
       pesanKosong.textContent =
-        hanyaFavorit && kata === ""
+        hanyaFavorit && kata === "" && statusAktif === "semua"
           ? "Belum ada favorit. Tekan ikon hati pada kartu siswa untuk menandainya."
+          : kata === "" && !hanyaFavorit
+          ? "Tidak ada siswa pada kategori ini."
           : `Tidak ada siswa yang cocok dengan "${inputCari.value.trim()}".`;
     }
   }
@@ -137,6 +148,14 @@ if (document.getElementById("cari")) {
     hanyaFavorit = !hanyaFavorit;
     tombolFavorit.setAttribute("aria-pressed", hanyaFavorit ? "true" : "false");
     cari();
+  });
+
+  tabStatus.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      statusAktif = tab.dataset.status;
+      tabStatus.forEach((t) => t.setAttribute("aria-pressed", t === tab ? "true" : "false"));
+      cari();
+    });
   });
 
   inputCari.addEventListener("input", cari);

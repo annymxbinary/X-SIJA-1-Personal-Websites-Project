@@ -449,6 +449,62 @@ body {
   50% { opacity: 0; }
 }
 
+/* ---------- Tab status (Semua / Tersedia / Belum tersedia) ---------- */
+
+.tab-status {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(159, 231, 238, 0.2);
+  border-radius: 999px;
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  background: transparent;
+  color: var(--text-soft);
+  border: 0;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.tab:hover {
+  color: var(--text);
+}
+
+.tab[aria-pressed="true"] {
+  background: var(--lime);
+  color: #10320f;
+}
+
+.tab-n {
+  min-width: 20px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.tab[aria-pressed="true"] .tab-n {
+  background: rgba(16, 50, 15, 0.18);
+}
+
+.tab:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
 /* ---------- Tombol favorit ---------- */
 
 .baris-info {

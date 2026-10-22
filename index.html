@@ -40,6 +40,11 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
         <input id="cari" type="search" placeholder="Cari nama atau nomor absen" autocomplete="off" spellcheck="false">
       </label>
+      <div class="tab-status" role="group" aria-label="Filter ketersediaan website">
+        <button class="tab" type="button" data-status="semua" aria-pressed="true">Semua <span class="tab-n" id="nSemua">0</span></button>
+        <button class="tab" type="button" data-status="tersedia" aria-pressed="false">Tersedia <span class="tab-n" id="nTersedia">0</span></button>
+        <button class="tab" type="button" data-status="belum" aria-pressed="false">Belum tersedia <span class="tab-n" id="nBelum">0</span></button>
+      </div>
       <div class="baris-info">
         <p class="penanda" id="jumlah" aria-live="polite">36 Siswa</p>
         <button class="filter-fav" id="tombolFavorit" type="button" aria-pressed="false">
